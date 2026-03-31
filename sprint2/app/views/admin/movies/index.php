@@ -75,7 +75,7 @@ $movies = $conn->query($sql);
                     </div>
                     <div class="text-start w-50">
                         <label for="banner">Banner</label>
-                        <input class="form-control mb-3" id="banner" type="file" name="poster" accept="image/*">
+                        <input class="form-control mb-3" id="banner" type="file" name="banner" accept="image/*">
                     </div>
                 </div>
                 <div class="text-start">
@@ -116,7 +116,7 @@ $movies = $conn->query($sql);
                         } ?>
                         <tr>
                             <td><?= $movie['id'] ?></td>
-                            <td><img src="../../../assets/uploads/posters/interestellar.png" alt="Poster1" style="height: 100px"></td>
+                            <td><img src="../../../assets/uploads/posters/<?= $movie['poster'] ?>" alt="Poster1" style="height: 100px"></td>
                             <td><?= $movie['title'] ?></td>
                             <td><?= $movie['description'] ?></td>
                             <td><?= $movie['genres_names'] ?></td>

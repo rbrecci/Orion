@@ -12,11 +12,14 @@ if(isset($_GET['id'])){
 
     $sql = "SELECT * FROM movies WHERE id = $id";
     $result = $conn->query($sql);
-    $data = $result->fetch_assoc();
+    $movie = $result->fetch_assoc();
 
     if($stmt->execute()){
+        unlink("../../assets/uploads/banners/{$movie['banner']}");
+        unlink("../../assets/uploads/posters/{$movie['poster']}");
+        
         $stmt = $conn->prepare("INSERT INTO activity_logs (action_type, entity_type, entity_id, entity_name, admin_id, admin_username) VALUES ('delete', 'movie', ?, ?, ?, ?)");
-        $stmt->bind_param("isis", $id, $data['title'], $_SESSION['user_id'], $_SESSION['username']);
+        $stmt->bind_param("isis", $id, $movie['title'], $_SESSION['user_id'], $_SESSION['username']);
         $stmt->execute();
 
         $_SESSION['message'] = 'Filme removido com sucesso!';

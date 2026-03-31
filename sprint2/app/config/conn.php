@@ -7,6 +7,6 @@ $password = '';
 $dbname = 'oriondb';
 
 // Executando a conexão com o banco via mysqli e atribuindo à variável $conn
-$conn = new mysqli($servername, $username, $password, $dbname)
+$conn = new mysqli($servername, $username, $password, $dbname, 3310)
 
 ?>
