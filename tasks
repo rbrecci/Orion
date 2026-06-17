@@ -1,8 +1,0 @@
-1- Remover travessões. [feito]
-2- Adicionar favicon do play da logo. [feito]
-3- Arrumar filme maior na landing. [feito]
-4- Preparar ambiente para hospedagem na infinityfree. [feito]
-   - config.php detecta local/produção pelo host (nada a editar ao subir)
-   - migrations e seeds unificados em database/database.sql
-   - código sem comentários nem indicações de IA
-5- (só eu consigo fazer) Hospedar
